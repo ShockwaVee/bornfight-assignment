@@ -1,3 +1,116 @@
-body{
-  background: red;
+header{
+  display: flex;
+  height: 127px;
+  box-shadow: 0 0 4px 4px #004ec21f;
+  font-family: RobotoRegular, serif;
+  .back-button{
+    display: flex;
+    width: 63px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    box-shadow: 0 0 4px 4px #134fd70f;
+    border: 1px solid #e7ecf5;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .content{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 0 60px;
+    justify-content: space-between;
+    .actions {
+      display: flex;
+      align-items: center;
+      color:$text-primary;
+      button {
+        width: 180px;
+        height: 60px;
+        background: $secondary-color;
+        color: #e9eef2;
+        border: 1px solid #e11f66;
+        box-shadow: 0 5px 11px 5px #004ec20f;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-right: 60px;
+        cursor: pointer;
+      }
+      div{
+        margin-right: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        cursor: pointer;
+        i{
+          margin-right: 15px;
+          font-size: 16px;
+        }
+        &:last-of-type{
+          margin-right: 0;
+        }
+      }
+    }
+    .user{
+      display: flex;
+      align-items: center;
+      .fa-search{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $secondary-color;
+        color: white;
+        border-radius: 50%;
+        margin-right: 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .image{
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        img{
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          border: 5px solid #e1edff;
+          box-shadow: 0 1px 4px 1px #4e00c513;
+        }
+        &:after{
+          font-family: "Font Awesome 5 Free";
+          content: '\f107';
+          display: inline-block;
+          font-weight: 600;
+          color: $primary-color;
+          font-size: 12px;
+          height: auto;
+          width: auto;
+          position: absolute;
+          right: -15px;
+        }
+      }
+    }
+  }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60px;
+    align-items: center;
+    background: $primary-color;
+    color: white;
+    box-shadow: 0 0 4px 4px #134fd70f;
+    border: 1px solid #3b0c82;
+    i{
+      &.fa-bell{
+        font-size: 18px;
+      }
+      cursor: pointer;
+    }
+
+  }
 }
