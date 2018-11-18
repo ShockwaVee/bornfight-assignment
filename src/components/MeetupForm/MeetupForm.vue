@@ -133,7 +133,9 @@
               <input name="color" type="radio">
               <span class="checkmark"></span>
             </label>
-            <div class="misc-options"></div>
+            <label class="container">
+              <i class="fas fa-ellipsis-h"></i>
+            </label>
           </div>
         </div>
       </div>
