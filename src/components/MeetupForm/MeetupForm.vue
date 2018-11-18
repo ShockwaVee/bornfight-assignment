@@ -65,21 +65,23 @@
       <div class="additional-info">
         <div class="notifications">
           <label>Notifications</label>
-          <div class="select-wrapper">
-            <select name="notifications">
-              <option value="email">Email</option>
-              <option value="dva">dva</option>
-              <option value="tri">tri</option>
-            </select>
+          <div class="notification-dropdowns">
+            <div class="select-wrapper">
+              <select name="notifications">
+                <option value="email">Email</option>
+                <option value="dva">dva</option>
+                <option value="tri">tri</option>
+              </select>
+            </div>
+            <input type="text">
+            <div class="select-wrapper">
+              <select name="time">
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+              </select>
+            </div>
+            <i class="fas fa-times"></i>
           </div>
-          <input type="text">
-          <div class="select-wrapper">
-            <select name="time">
-              <option value="minutes">Minutes</option>
-              <option value="hours">Hours</option>
-            </select>
-          </div>
-          <i class="fas fa-times"></i>
           <div class="add-notification">
             <i class="fas fa-plus"></i>
             <span>Add a notification</span>
@@ -140,12 +142,12 @@
 </template>
 
 <script>
-  import GeneralInfo from './GeneralInfo'
+import GeneralInfo from './GeneralInfo'
 
-  export default {
-    name: 'MeetupForm',
-    components: {GeneralInfo}
-  }
+export default {
+  name: 'MeetupForm',
+  components: {GeneralInfo}
+}
 </script>
 
 <style scoped>

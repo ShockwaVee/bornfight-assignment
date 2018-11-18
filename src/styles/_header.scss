@@ -1,8 +1,14 @@
-header{
+header {
   display: flex;
   height: 127px;
   box-shadow: 0 0 4px 4px #004ec21f;
-  .back-button{
+  @include desktop {
+    height: 77px;
+  }
+  @include tablet {
+    height: auto;
+  }
+  .back-button {
     display: flex;
     width: 63px;
     flex-direction: column;
@@ -13,17 +19,27 @@ header{
     border: 1px solid #e7ecf5;
     font-size: 16px;
     cursor: pointer;
+    @include desktop {
+      width: 33px;
+    }
   }
-  .content{
+  .content {
     display: flex;
     flex-grow: 1;
     align-items: center;
     padding: 0 60px;
     justify-content: space-between;
+    @include desktop {
+      padding: 0 30px;
+    }
+    @include tablet {
+      flex-direction: column-reverse;
+      padding: 15px 10px;
+    }
     .actions {
       display: flex;
       align-items: center;
-      color:$text-primary;
+      color: $text-primary;
       button {
         width: 180px;
         height: 60px;
@@ -36,25 +52,48 @@ header{
         font-size: 13px;
         margin-right: 60px;
         cursor: pointer;
+        @include desktop {
+          width: 90px;
+          height: 30px;
+          margin-right: 20px;
+        }
+        @include mobile {
+          width: 60px;
+          margin-right: 10px;
+        }
       }
-      div{
+      div {
         margin-right: 40px;
         font-size: 12px;
         text-transform: uppercase;
         cursor: pointer;
-        i{
+        i {
           margin-right: 15px;
           font-size: 16px;
+          @include desktop {
+            margin-right: 5px;
+            font-size: 12px;
+          }
         }
-        &:last-of-type{
+        &:last-of-type {
           margin-right: 0;
         }
+        @include desktop {
+          margin-right: 20px;
+        }
+        @include tablet {
+          margin-right: 10px;
+        }
+      }
+      @include mobile {
+        width: 100%;
+        justify-content: space-around;
       }
     }
-    .user{
+    .user {
       display: flex;
       align-items: center;
-      .fa-search{
+      .fa-search {
         width: 40px;
         height: 40px;
         display: flex;
@@ -66,20 +105,29 @@ header{
         margin-right: 18px;
         font-size: 14px;
         cursor: pointer;
+        @include desktop {
+          width: 30px;
+          height: 30px;
+          font-size: 12px;
+        }
       }
-      .image{
+      .image {
         display: flex;
         align-items: center;
         position: relative;
         cursor: pointer;
-        img{
+        img {
           height: 32px;
           width: 32px;
           border-radius: 50%;
           border: 5px solid #e1edff;
           box-shadow: 0 1px 4px 1px #4e00c513;
+          @include desktop {
+            height: 22px;
+            width: 22px;
+          }
         }
-        &:after{
+        &:after {
           font-family: "Font Awesome 5 Free";
           content: '\f107';
           display: inline-block;
@@ -92,9 +140,12 @@ header{
           right: -15px;
         }
       }
+      @include tablet {
+        margin-bottom: 15px;
+      }
     }
   }
-  .menu{
+  .menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -104,9 +155,20 @@ header{
     color: white;
     box-shadow: 0 0 4px 4px #134fd70f;
     border: 1px solid #3b0c82;
-    i{
-      &.fa-bell{
+    @include desktop {
+      width: 33px;
+    }
+    i {
+      &.fa-bell {
         font-size: 18px;
+        @include desktop {
+          font-size: 12px;
+        }
+      }
+      &.fa-th {
+        @include desktop {
+          font-size: 12px;
+        }
       }
       cursor: pointer;
     }

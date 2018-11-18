@@ -2,6 +2,11 @@
   display: flex;
   padding: 0 60px;
   flex-wrap: wrap;
+  max-width: 1920px;
+  margin: 0 auto;
+  @include desktop {
+    padding: 0 30px;
+  }
   .input-container {
     display: flex;
     width: 100%;
@@ -14,7 +19,7 @@
     box-shadow: 0 4px 9px 8px #11012921;
     border: 1px solid #3c1081;
     input {
-      width: calc(100% - 175px);
+      width: 79%;
       height: 100%;
       border: none;
       padding: 0 0 0 30px;
@@ -22,9 +27,23 @@
       color: #47109b;
       font-size: 20px;
       letter-spacing: 0.0015em;
+      @include desktop{
+        padding-left: 15px;
+      }
+      @include mobile{
+        width: 100%!important;
+        height: 30px;
+        font-size: 16px;
+        margin-bottom: 5px;
+        box-shadow: 0 4px 9px 8px #11012921;
+        border: 1px solid #3c1081;
+        border-radius: 2px;
+        padding: 0 0 0 5px;
+        box-sizing: border-box;
+      }
     }
     button {
-      width: 175px;
+      width: 21%;
       height: 100%;
       border: 1px solid #e7ecf5;
       background: white;
@@ -35,6 +54,24 @@
       box-shadow: 0 2px 2px 2px #134fd70f;
       border-radius: 4px;
       cursor: pointer;
+      min-width: 105px;
+      @include mobile{
+        height: 35px;
+      }
+    }
+    @include desktop {
+      height: 50px;
+    }
+    @include mobile{
+      height: auto!important;
+      flex-direction: column;
+      background: transparent;
+      box-shadow: none!important;
+      border: none!important;
+      align-items: flex-start;
+    }
+    @include mobile{
+      padding-right: 0!important;
     }
   }
   .checkbox-container {
@@ -42,6 +79,7 @@
     height: 25px;
     color: #9274c5;
     font-size: 12px;
+    flex-wrap: wrap;
     .container {
       display: flex;
       cursor: pointer;
@@ -65,6 +103,12 @@
           background-color: white;
         }
       }
+      @include desktop {
+        margin-right: 15px;
+      }
+    }
+    @include tablet{
+      padding-top: 8px;
     }
   }
   .dropdowns {
@@ -72,11 +116,15 @@
     width: 100%;
     box-shadow: 0 4px 11px 0 rgba(19, 79, 215, 0.15);
     margin-bottom: 36px;
+    flex-wrap: wrap;
   }
   .select-wrapper {
     position: relative;
     width: 50%;
     height: 38px;
+    @include desktop {
+      width: 100%;
+    }
     &:after {
       font-family: "Font Awesome 5 Free";
       content: '\f107';
@@ -120,12 +168,22 @@
     padding: 0 60px;
     box-sizing: border-box;
     box-shadow: 0 14px 10px 3px #004ec20f;
+
     .event-name {
       width: 78%;
       border-right: 1px solid #6730bc;
       padding: 60px 80px 11px 0;
       display: flex;
       flex-wrap: wrap;
+      @include desktop {
+        padding: 30px 20px 5px 0;
+      }
+      @include tablet{
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #6730bc;
+        padding: 15px 0;
+      }
     }
     .event-time {
       width: 22%;
@@ -133,6 +191,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      min-width: 195px;
       .starting-time, .ending-time {
         width: calc(50% - 12.5px);
         display: flex;
@@ -151,6 +210,9 @@
         font-size: 13px;
         color: #a78cd5;
         border-radius: 2px;
+        @include desktop {
+          font-size: 11px;
+        }
       }
       .time {
         display: flex;
@@ -167,11 +229,33 @@
         box-shadow: 0 6px 6px -1px #0b28400f;
         z-index: 1;
         font-size: 15px;
+        @include desktop {
+          font-size: 12px;
+        }
       }
       a {
         font-size: 12px;
         color: #9274c5;
+        @include tablet{
+          padding-top: 10px;
+        }
       }
+      @include desktop {
+        padding: 30px 0 5px 20px;
+      }
+      @include tablet{
+        width: 100%;
+        padding: 15px 0;
+      }
+    }
+    @include desktop {
+      padding: 0 30px;
+      height: 150px;
+    }
+    @include tablet{
+      flex-wrap: wrap;
+      height: auto;
+      padding: 0 15px;
     }
   }
   .guests {
@@ -197,24 +281,32 @@
         box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
         border: solid 1px #c9d0ed;
         margin-bottom: 20px;
-        padding: 1px 6px 3px 0;
+        padding: 1px 6px 0 0;
         input {
           width: 80%;
+          @include mobile{
+            border: solid 1px #c9d0ed;
+            box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
+          }
         }
         button {
           width: 23%;
           color: #e9eef2;
           background: $secondary-color;
           box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
+          max-height: 40px;
+          min-width: 60px;
         }
       }
       .checkbox-container {
+        height: auto;
         .container {
           font-size: 12px;
           line-height: 1.58;
           letter-spacing: -0.1px;
           color: #7780a7;
           margin-right: 20px;
+          margin-bottom: 10px;
           &:hover input ~ .checkmark {
             background-color: #e6e6e6;;
           }
@@ -233,6 +325,9 @@
             }
           }
         }
+      }
+      @include desktop{
+        padding-bottom: 40px;
       }
     }
     .event-publish {
@@ -268,6 +363,13 @@
         }
       }
     }
+    @include desktop {
+      padding: 30px 20px 20px 30px;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 20px 15px;
+    }
   }
   .event-details {
     display: flex;
@@ -278,7 +380,7 @@
     .tabs {
       width: 100%;
       display: flex;
-      padding-left: 60px;
+      padding: 0 60px;
       height: 85px;
       border-bottom: 1px solid #ccd9ec;
       span {
@@ -302,6 +404,16 @@
         &:last-of-type {
           margin-right: 0;
         }
+        @include mobile{
+          padding: 20px 10px 0 10px;
+        }
+      }
+      @include desktop {
+        padding: 0 30px;
+        height: 55px;
+      }
+      @include tablet {
+        padding: 0 15px;
       }
     }
     .select-wrapper {
@@ -354,6 +466,25 @@
         &::placeholder {
           color: rgba(146, 116, 197, 0.6);
         }
+        @include desktop{
+          padding-left: 15px;
+        }
+        @include mobile{
+          padding-left: 5px;
+        }
+      }
+      @include desktop {
+        padding: 30px 20px 0 30px;
+      }
+      @include tablet{
+        padding: 20px 10px 0 15px;
+      }
+      @include mobile{
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ccd9ec;
+        border-right: none;
+        padding: 20px 15px;
       }
     }
     .additional-info {
@@ -374,37 +505,60 @@
           color: #9274c5;
           margin-bottom: 5px;
         }
-        .select-wrapper {
-          width: 40%;
-          border-radius: 2px;
-          box-shadow: 0 2px 6px 0 rgba(19, 79, 215, 0.1);
-          border: solid 1px #e7ecf5;
-          box-sizing: border-box;
-          &:nth-of-type(1) {
+        .notification-dropdowns {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;
+          .select-wrapper {
+            width: 40%;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px 0 rgba(19, 79, 215, 0.1);
+            border: solid 1px #e7ecf5;
+            box-sizing: border-box;
+            min-width: 80px;
+            &:nth-of-type(1) {
+              margin-right: 3px;
+            }
+            @include desktop {
+              width: 100%;
+              margin-right: 0 !important;
+            }
+          }
+          input {
+            width: calc(20% - 12px);
+            box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.1);
+            font-family: RobotoMedium, sans-serif;
+            border: solid 1px #c9d0ed;
+            background-color: #f6faff;
+            font-size: 14px;
+            line-height: 1.36;
+            letter-spacing: -0.1px;
+            color: #2f0969;
+            text-align: center;
+            min-width: 25px;
             margin-right: 3px;
+            @include desktop {
+              width: 100%;
+              margin-right: 0;
+              text-align: left;
+            }
           }
-          &:nth-of-type(2) {
-            margin-left: 3px;
+          .fa-times {
+            position: absolute;
+            right: -18px;
+            top: 50%;
+            font-size: 9px;
+            color: #fa4084;
+            margin-top: -3px;
+            @include desktop {
+              right: -12px;
+            }
+            @include tablet{
+              top: -17px;
+              right: 8px;
+            }
           }
-        }
-        input {
-          width: calc(20% - 12px);
-          box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.1);
-          font-family: RobotoMedium, sans-serif;
-          border: solid 1px #c9d0ed;
-          background-color: #f6faff;
-          font-size: 14px;
-          line-height: 1.36;
-          letter-spacing: -0.1px;
-          color: #2f0969;
-          text-align: center;
-        }
-        .fa-times {
-          position: absolute;
-          right: -18px;
-          top: 32px;
-          font-size: 9px;
-          color: #fa4084;
         }
         .add-notification {
           width: 100%;
@@ -414,7 +568,7 @@
           color: #9274c5;
           margin-top: 10px;
           margin-bottom: 30px;
-          .fa-plus{
+          .fa-plus {
             color: #cac2e8;
           }
         }
@@ -430,7 +584,7 @@
           color: #9274c5;
           margin-bottom: 5px;
         }
-        .dropdowns{
+        .dropdowns {
           margin-bottom: 26px;
         }
       }
@@ -446,12 +600,13 @@
           margin-bottom: 10px;
         }
         .checkbox-container {
-          height: 15px;
+          height: auto;
           margin-left: -7px;
           .container {
             justify-content: center;
             margin-right: 0;
             width: 28px;
+            height: 28px;
             .checkmark {
               height: 15px;
               width: 15px;
@@ -497,8 +652,26 @@
               }
             }
           }
+          @include tablet{
+            padding-top: 0;
+          }
         }
       }
+      @include desktop {
+        padding: 30px 30px 0 20px;
+      }
+      @include tablet{
+        padding: 20px 15px 15px 10px;
+      }
+      @include mobile{
+        width: 100%;
+        height: auto;
+        padding: 20px 15px;
+      }
+    }
+    @include tablet {
+      width: 100%;
+      border-bottom: none;
     }
   }
 }
