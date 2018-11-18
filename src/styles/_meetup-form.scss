@@ -4,27 +4,24 @@
   flex-wrap: wrap;
   max-width: 1920px;
   margin: 0 auto;
-  @include desktop {
-    padding: 0 30px;
-  }
   .input-container {
     display: flex;
     width: 100%;
     height: 64px;
-    padding: 5px 6px 5px 0;
+    padding: 0 6px 0 0;
     align-items: center;
-    background: white;
+    background: $white;
     box-sizing: border-box;
     border-radius: 3px;
-    box-shadow: 0 4px 9px 8px #11012921;
-    border: 1px solid #3c1081;
+    box-shadow: 0 9px 33px 0 rgba(17, 1, 41, 0.31);
+    border: 1px solid $indigo-blue-two;
     input {
       width: 79%;
       height: 100%;
       border: none;
       padding: 0 0 0 30px;
       font-family: RobotoLight, sans-serif;
-      color: #47109b;
+      color: $indigo-blue;
       font-size: 20px;
       letter-spacing: 0.0015em;
       @include desktop{
@@ -35,8 +32,8 @@
         height: 30px;
         font-size: 16px;
         margin-bottom: 5px;
-        box-shadow: 0 4px 9px 8px #11012921;
-        border: 1px solid #3c1081;
+        box-shadow: 0 9px 33px 0 rgba(17, 1, 41, 0.31);
+        border: 1px solid $indigo-blue-two;
         border-radius: 2px;
         padding: 0 0 0 5px;
         box-sizing: border-box;
@@ -45,16 +42,20 @@
     button {
       width: 21%;
       height: 100%;
-      border: 1px solid #e7ecf5;
-      background: white;
+      border: 1px solid $pale-grey-two;
+      background: $white;
       font-family: RobotoMedium, sans-serif;
       text-transform: uppercase;
       font-size: 13px;
-      color: $secondary-color;
-      box-shadow: 0 2px 2px 2px #134fd70f;
+      color: $warm-pink;
+      box-shadow: 0 4px 11px 0 rgba(19, 79, 215, 0.15);
       border-radius: 4px;
       cursor: pointer;
       min-width: 105px;
+      max-height: 52px;
+      @include desktop{
+        max-height: 40px;
+      }
       @include mobile{
         height: 35px;
       }
@@ -77,7 +78,7 @@
   .checkbox-container {
     display: flex;
     height: 25px;
-    color: #9274c5;
+    color: $deep-lilac;
     font-size: 12px;
     flex-wrap: wrap;
     .container {
@@ -86,21 +87,24 @@
       align-items: center;
       margin-right: 30px;
       &:hover input ~ .checkmark {
-        background-color: #9a82bd;
+        opacity: 0.5;
       }
       .checkmark {
         height: 13px;
         width: 13px;
         display: inline-block;
-        background-color: #764db4;
+        background-color: $white;
         margin-right: 10px;
-        border: 1px solid #501e9c;
+        border: 1px solid $indigo-blue-two;
+        box-shadow: 0 3px 9px 0 rgba(11, 40, 64, 0.15);
         transition: all .2s ease-out;
+        opacity: 0.2;
+        border-radius: 0.7px;
       }
       input {
         display: none;
         &:checked ~ .checkmark {
-          background-color: white;
+          opacity: 1;
         }
       }
       @include desktop {
@@ -130,7 +134,7 @@
       content: '\f107';
       display: inline-block;
       font-weight: 600;
-      color: $primary-color;
+      color: $indigo-blue;
       font-size: 12px;
       height: auto;
       width: auto;
@@ -144,12 +148,13 @@
       width: 100%;
       height: 100%;
       appearance: none;
-      border: solid 1px #e7ecf5;
+      font-family: RobotoMedium, sans-serif;
+      border: solid 1px $pale-grey-two;
       border-radius: 2px;
       font-size: 13px;
       line-height: 1.46;
       letter-spacing: -0.1px;
-      color: $primary-color;
+      color: $indigo-blue;
       padding: 0 30px 0 20px;
       overflow: hidden;
       white-space: nowrap;
@@ -163,15 +168,15 @@
   .general-info {
     width: 100%;
     height: 200px;
-    background: $primary-color;
+    background: $purple;
     display: flex;
     padding: 0 60px;
     box-sizing: border-box;
-    box-shadow: 0 14px 10px 3px #004ec20f;
-
+    box-shadow: 0 14px 10px 3px rgba(0, 78, 194, 0.15);
+    border: 1px solid $indigo;
     .event-name {
       width: 78%;
-      border-right: 1px solid #6730bc;
+      border-right: 1px solid $blurple;
       padding: 60px 80px 11px 0;
       display: flex;
       flex-wrap: wrap;
@@ -181,7 +186,7 @@
       @include tablet{
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid #6730bc;
+        border-bottom: 1px solid $blurple;
         padding: 15px 0;
       }
     }
@@ -208,8 +213,9 @@
         width: 100%;
         background: #774eb5;
         font-size: 13px;
-        color: #a78cd5;
+        color: $pale-purple;
         border-radius: 2px;
+        box-shadow: 0 3px 9px 0 rgba(11, 40, 64, 0.15);
         @include desktop {
           font-size: 11px;
         }
@@ -220,13 +226,13 @@
         font-family: RobotoMedium, sans-serif;
         justify-content: center;
         align-items: center;
-        background: white;
+        background: $white;
         height: 45px;
         width: 100%;
-        color: #2f0969;
-        border: 1px solid #3c1081;
+        color: $dark-indigo;
+        border: 1px solid $indigo-blue-two;
         border-radius: 2px;
-        box-shadow: 0 6px 6px -1px #0b28400f;
+        box-shadow: 0 3px 9px 0 rgba(11, 40, 64, 0.15);
         z-index: 1;
         font-size: 15px;
         @include desktop {
@@ -235,7 +241,7 @@
       }
       a {
         font-size: 12px;
-        color: #9274c5;
+        color: $deep-lilac;
         @include tablet{
           padding-top: 10px;
         }
@@ -263,39 +269,39 @@
     box-sizing: border-box;
     padding: 60px 80px 40px 60px;
     box-shadow: 0 2px 6.8px 0.2px rgba(80, 103, 218, 0.15);
-    border: 1px solid #f4f5fd;
     height: 100%;
     z-index: 1;
     .add-guests {
-      border-bottom: 1px solid #ccd9ec;
+      border-bottom: 1px solid $light-blue-grey-two;
       padding-bottom: 100px;
       h4 {
         font-size: 16px;
         line-height: 1.19;
         letter-spacing: -0.3px;
         margin: 0 0 20px;
-        color: $primary-color;
+        color: $indigo-blue;
       }
       .input-container {
         height: 45px;
         box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
-        border: solid 1px #c9d0ed;
+        border: solid 1px $light-blue-grey;
         margin-bottom: 20px;
         padding: 1px 6px 0 0;
         input {
           width: 80%;
           @include mobile{
-            border: solid 1px #c9d0ed;
+            border: solid 1px $light-blue-grey;
             box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
           }
         }
         button {
           width: 23%;
-          color: #e9eef2;
-          background: $secondary-color;
+          color: $pale-grey;
+          background: $warm-pink;
           box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
           max-height: 40px;
           min-width: 60px;
+          border: 1px solid $lipstick;
         }
       }
       .checkbox-container {
@@ -304,7 +310,7 @@
           font-size: 12px;
           line-height: 1.58;
           letter-spacing: -0.1px;
-          color: #7780a7;
+          color: $blue-grey;
           margin-right: 20px;
           margin-bottom: 10px;
           &:hover input ~ .checkmark {
@@ -316,12 +322,12 @@
             object-fit: contain;
             border-radius: 1px;
             box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
-            border: solid 1px #c9d0ed;
-            background-color: white;
+            border: solid 1px $light-blue-grey;
+            background-color: $white;
           }
           input {
             &:checked ~ .checkmark {
-              background-color: $primary-color;
+              background-color: $purple-two;
             }
           }
         }
@@ -340,24 +346,24 @@
         opacity: 0.93;
         border-radius: 3.3px;
         box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
-        border: solid 1px #3b0c82;
-        background-color: $primary-color;
+        border: solid 1px $indigo;
+        background-color: $indigo-blue;
         font-size: 13px;
         line-height: 1.46;
         letter-spacing: -0.1px;
-        color: #e9eef2;
+        color: $pale-grey;
       }
       .additional-info {
         opacity: 0.7;
         font-size: 11px;
         line-height: 1.36;
         letter-spacing: -0.1px;
-        color: #605077;
+        color: $dusk;
         margin-bottom: 29px;
         margin-top: 0;
         a {
           font-size: 11px;
-          color: $secondary-color;
+          color: $warm-pink;
           text-decoration: none;
           margin-left: 5px;
         }
@@ -375,14 +381,14 @@
     display: flex;
     flex-wrap: wrap;
     width: 59%;
-    border-bottom: 1px solid #ccd9ec;
+    border-bottom: 1px solid $light-blue-grey-two;
     overflow: hidden;
     .tabs {
       width: 100%;
       display: flex;
       padding: 0 60px;
       height: 85px;
-      border-bottom: 1px solid #ccd9ec;
+      border-bottom: 1px solid $light-blue-grey-two;
       span {
         font-family: RobotoMedium, sans-serif;
         height: 100%;
@@ -393,13 +399,14 @@
         font-size: 12px;
         line-height: 1.58;
         letter-spacing: -0.1px;
-        color: $primary-color;
+        color: $deep-lilac;
         text-transform: uppercase;
         padding: 20px 20px 0 20px;
         box-sizing: border-box;
         cursor: pointer;
         &.active {
-          border-bottom: 4px solid #ae67d1;
+          border-bottom: 4px solid $amethyst;
+          color: $purple-two;
         }
         &:last-of-type {
           margin-right: 0;
@@ -433,13 +440,13 @@
       padding: 70px 25px 0 60px;
       box-sizing: border-box;
       height: 100%;
-      background: #f0f6ff;
-      border-right: 1px solid #ccd9ec;
+      background: $very-light-blue;
+      border-right: 1px solid $light-blue-grey-two;
       label {
         font-size: 13px;
         line-height: 1.46;
         letter-spacing: -0.1px;
-        color: #9274c5;
+        color: $deep-lilac;
         margin-bottom: 5px;
       }
       input {
@@ -454,17 +461,17 @@
       input, textarea {
         border-radius: 2px;
         box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
-        border: solid 1px #c9d0ed;
+        border: solid 1px $light-blue-grey;
         background-color: #f6faff;
         font-size: 13px;
         line-height: 1.46;
         letter-spacing: -0.3px;
-        color: #9274c5;
+        color: $deep-lilac;
         padding-left: 20px;
         padding-right: 20px;
         box-sizing: border-box;
         &::placeholder {
-          color: rgba(146, 116, 197, 0.6);
+          opacity: 0.6;
         }
         @include desktop{
           padding-left: 15px;
@@ -482,7 +489,7 @@
       @include mobile{
         width: 100%;
         height: auto;
-        border-bottom: 1px solid #ccd9ec;
+        border-bottom: 1px solid $light-blue-grey-two;
         border-right: none;
         padding: 20px 15px;
       }
@@ -490,7 +497,7 @@
     .additional-info {
       width: 42%;
       height: 100%;
-      background: #f0f6ff;
+      background: $very-light-blue;
       padding: 70px 80px 0 30px;
       box-sizing: border-box;
       .notifications {
@@ -502,7 +509,7 @@
           font-size: 13px;
           line-height: 1.46;
           letter-spacing: -0.1px;
-          color: #9274c5;
+          color: $deep-lilac;
           margin-bottom: 5px;
         }
         .notification-dropdowns {
@@ -514,7 +521,7 @@
             width: 40%;
             border-radius: 2px;
             box-shadow: 0 2px 6px 0 rgba(19, 79, 215, 0.1);
-            border: solid 1px #e7ecf5;
+            border: solid 1px $pale-grey-two;
             box-sizing: border-box;
             min-width: 80px;
             &:nth-of-type(1) {
@@ -529,15 +536,16 @@
             width: calc(20% - 12px);
             box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.1);
             font-family: RobotoMedium, sans-serif;
-            border: solid 1px #c9d0ed;
+            border: solid 1px $light-blue-grey;
             background-color: #f6faff;
             font-size: 14px;
             line-height: 1.36;
             letter-spacing: -0.1px;
-            color: #2f0969;
+            color: $dark-indigo;
             text-align: center;
             min-width: 25px;
             margin-right: 3px;
+            border-radius: 3px;
             @include desktop {
               width: 100%;
               margin-right: 0;
@@ -549,7 +557,7 @@
             right: -18px;
             top: 50%;
             font-size: 9px;
-            color: #fa4084;
+            color: $warm-pink;
             margin-top: -3px;
             @include desktop {
               right: -12px;
@@ -565,11 +573,11 @@
           font-size: 12px;
           line-height: 1.58;
           letter-spacing: -0.1px;
-          color: #9274c5;
+          color: $deep-lilac;
           margin-top: 10px;
           margin-bottom: 30px;
           .fa-plus {
-            color: #cac2e8;
+            opacity: 0.4;
           }
         }
       }
@@ -581,7 +589,7 @@
           font-size: 13px;
           line-height: 1.46;
           letter-spacing: -0.1px;
-          color: #9274c5;
+          color: $deep-lilac;
           margin-bottom: 5px;
         }
         .dropdowns {
@@ -596,7 +604,7 @@
           font-size: 13px;
           line-height: 1.46;
           letter-spacing: -0.1px;
-          color: #9274c5;
+          color: $deep-lilac;
           margin-bottom: 10px;
         }
         .checkbox-container {
@@ -613,6 +621,7 @@
               margin-right: 0;
               border-radius: 50%;
               border: none;
+              opacity: 1;
             }
             input {
               display: none;
@@ -623,32 +632,32 @@
             }
             &:nth-of-type(1) {
               .checkmark {
-                background: #5484ed;
+                background: $soft-blue;
               }
             }
             &:nth-of-type(2) {
               .checkmark {
-                background: #a4bdfc;
+                background: $pastel-blue;
               }
             }
             &:nth-of-type(3) {
               .checkmark {
-                background: #ae67d1;
+                background: $amethyst;
               }
             }
             &:nth-of-type(4) {
               .checkmark {
-                background: #46d6db;
+                background: $aqua-marine;
               }
             }
             &:nth-of-type(5) {
               .checkmark {
-                background: #fbd75b;
+                background: $light-gold;
               }
             }
             &:nth-of-type(6) {
               .checkmark {
-                background: #ff887c;
+                background: $salmon;
               }
             }
           }
@@ -673,5 +682,8 @@
       width: 100%;
       border-bottom: none;
     }
+  }
+  @include desktop {
+    padding: 0 30px;
   }
 }

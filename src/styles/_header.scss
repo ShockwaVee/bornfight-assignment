@@ -1,7 +1,7 @@
 header {
   display: flex;
   height: 127px;
-  box-shadow: 0 0 4px 4px #004ec21f;
+  box-shadow: 0 2px 9px 0 rgba(0, 78, 194, 0.3);
   @include desktop {
     height: 77px;
   }
@@ -14,9 +14,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $primary-color;
-    box-shadow: 0 0 4px 4px #134fd70f;
-    border: 1px solid #e7ecf5;
+    color: $purple-three;
+    box-shadow: 0 4px 11px 0 rgba(19, 79, 215, 0.15);
+    border: 1px solid $pale-grey-two;
     font-size: 16px;
     cursor: pointer;
     @include desktop {
@@ -39,14 +39,14 @@ header {
     .actions {
       display: flex;
       align-items: center;
-      color: $text-primary;
+      color: $deep-lilac;
       button {
         width: 180px;
         height: 60px;
-        background: $secondary-color;
-        color: #e9eef2;
-        border: 1px solid #e11f66;
-        box-shadow: 0 5px 11px 5px #004ec20f;
+        background: $warm-pink;
+        color: $pale-grey;
+        border: 1px solid $lipstick;
+        box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
         border-radius: 2px;
         text-transform: uppercase;
         font-size: 13px;
@@ -85,6 +85,10 @@ header {
           margin-right: 10px;
         }
       }
+      @include tablet{
+        width: 100%;
+        justify-content: space-evenly;
+      }
       @include mobile {
         width: 100%;
         justify-content: space-around;
@@ -99,8 +103,8 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: $secondary-color;
-        color: white;
+        background: $warm-pink;
+        color: $white;
         border-radius: 50%;
         margin-right: 18px;
         font-size: 14px;
@@ -121,7 +125,7 @@ header {
           width: 32px;
           border-radius: 50%;
           border: 5px solid #e1edff;
-          box-shadow: 0 1px 4px 1px #4e00c513;
+          box-shadow: 0 3px 9px 0 rgba(78, 0, 197, 0.18);
           @include desktop {
             height: 22px;
             width: 22px;
@@ -132,7 +136,7 @@ header {
           content: '\f107';
           display: inline-block;
           font-weight: 600;
-          color: $primary-color;
+          color: $purple-two;
           font-size: 12px;
           height: auto;
           width: auto;
@@ -151,10 +155,10 @@ header {
     justify-content: space-around;
     width: 60px;
     align-items: center;
-    background: $primary-color;
-    color: white;
-    box-shadow: 0 0 4px 4px #134fd70f;
-    border: 1px solid #3b0c82;
+    background: $indigo-blue;
+    color: $white;
+    box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
+    border: 1px solid $indigo;
     @include desktop {
       width: 33px;
     }
