@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm" id="meetup-form">
+  <form ref="form" @submit.prevent="submitForm" id="meetup-form">
     <GeneralInfo></GeneralInfo>
     <Guests :eventType="eventType" :moreActions="moreActions"></Guests>
     <EventDetails :notifications="notifications" :calendars="calendar"></EventDetails>
@@ -62,14 +62,20 @@ export default {
     },
     submitForm () {
       window.localStorage.setItem('event', JSON.stringify(this.event))
+      this.clearForm()
     },
     updateValue (property, value) {
       this.event[property] = value
+    },
+    clearForm () {
+      this.$refs.form.reset()
+      events.$emit('resetForm')
     }
   },
   mounted () {
     events.$on('onResponse', this.populateFields)
     events.$on('valueChange', this.updateValue)
+    events.$on('clearForm', this.clearForm)
   }
 }
 </script>

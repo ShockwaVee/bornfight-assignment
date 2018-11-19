@@ -52,6 +52,14 @@ export default {
       guestChecks: []
     }
   },
+  methods: {
+    resetData () {
+      this.guests = ''
+      this.action = 'More actions'
+      this.typeEvent = 'Public'
+      this.guestChecks = []
+    }
+  },
   watch: {
     guests () {
       events.$emit('valueChange', 'guests', this.guests.trim().split(','))
@@ -65,6 +73,9 @@ export default {
     guestChecks () {
       events.$emit('valueChange', 'guestActions', this.guestChecks)
     }
+  },
+  mounted () {
+    events.$on('resetForm', this.resetData)
   }
 }
 </script>

@@ -86,6 +86,18 @@ export default {
     }
   },
   props: ['notifications', 'calendars'],
+  methods: {
+    resetData () {
+      this.location = ''
+      this.description = ''
+      this.notification.amount = ''
+      this.notification.type = 'Email'
+      this.notification.time = 'Minutes'
+      this.calendar.user = 'Mario Šestak'
+      this.calendar.as = 'Show me as'
+      this.color = 'indigo'
+    }
+  },
   watch: {
     location () {
       events.$emit('valueChange', 'location', this.location)
@@ -108,6 +120,9 @@ export default {
     color () {
       events.$emit('valueChange', 'color', this.color)
     }
+  },
+  mounted () {
+    events.$on('resetForm', this.resetData)
   }
 }
 </script>

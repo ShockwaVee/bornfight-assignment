@@ -39,6 +39,12 @@ export default {
       eventChecks: []
     }
   },
+  methods: {
+    resetData () {
+      this.name = ''
+      this.eventChecks = []
+    }
+  },
   watch: {
     name () {
       events.$emit('valueChange', 'name', this.name)
@@ -46,6 +52,9 @@ export default {
     eventChecks () {
       events.$emit('valueChange', 'occurrence', this.eventChecks)
     }
+  },
+  mounted () {
+    events.$on('resetForm', this.resetData)
   }
 }
 </script>
