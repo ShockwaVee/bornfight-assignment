@@ -2,19 +2,14 @@
   <div class="general-info">
     <div class="event-name">
       <div class="input-container">
-        <input type="text">
-        <button>Save event</button>
+        <input v-model="name" title="event-name" type="text" required>
+        <button type="submit">Save event</button>
       </div>
       <div class="checkbox-container">
-        <label class="container">
-          <input type="checkbox">
+        <label v-for="(eventOccurrence, index) in eventOccurrences" :key="index" class="container">
+          <input :value="eventOccurrence" v-model="eventChecks" type="checkbox">
           <span class="checkmark"></span>
-          All day
-        </label>
-        <label class="container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Repeat
+          {{eventOccurrence}}
         </label>
       </div>
     </div>
@@ -33,7 +28,24 @@
 </template>
 
 <script>
+import {events} from '../../events'
+
 export default {
-  name: 'GeneralInfo'
+  name: 'GeneralInfo',
+  data () {
+    return {
+      name: '',
+      eventOccurrences: ['All day', 'Repeat'],
+      eventChecks: []
+    }
+  },
+  watch: {
+    name () {
+      events.$emit('valueChange', 'name', this.name)
+    },
+    eventChecks () {
+      events.$emit('valueChange', 'occurrence', this.eventChecks)
+    }
+  }
 }
 </script>
