@@ -32,16 +32,12 @@
         <div class="dropdowns">
           <div class="select-wrapper">
             <select name="publicity">
-              <option value="public">Public</option>
-              <option value="dva">Dva</option>
-              <option value="tri">Tri</option>
+              <option v-for="(type, index) in eventType" :key="type + '-' + index" :value="type">{{type}}</option>
             </select>
           </div>
           <div class="select-wrapper">
             <select name="actions">
-              <option value="more">More actions</option>
-              <option value="dva">Dva</option>
-              <option value="tri">Tri</option>
+              <option v-for="(action, index) in moreActions" :key="action + '-' + index" :value="action">{{action}}</option>
             </select>
           </div>
         </div>
@@ -68,16 +64,13 @@
           <div class="notification-dropdowns">
             <div class="select-wrapper">
               <select name="notifications">
-                <option value="email">Email</option>
-                <option value="dva">dva</option>
-                <option value="tri">tri</option>
+                <option v-for="(type, index) in notifications.type" :key="type + '-' + index" :value="type">{{type}}</option>
               </select>
             </div>
             <input type="text">
             <div class="select-wrapper">
               <select name="time">
-                <option value="minutes">Minutes</option>
-                <option value="hours">Hours</option>
+                <option v-for="(time, index) in notifications.time" :key="time + '-' + index" :value="time">{{time}}</option>
               </select>
             </div>
             <i class="fas fa-times"></i>
@@ -92,16 +85,12 @@
           <div class="dropdowns">
             <div class="select-wrapper">
               <select name="person">
-                <option value="public">Mario Šestak</option>
-                <option value="dva">Dva</option>
-                <option value="tri">Tri</option>
+                <option v-for="(user, index) in calendar.users" :key="user + '-' + index" :value="user">{{user}}</option>
               </select>
             </div>
             <div class="select-wrapper">
               <select name="show-as">
-                <option value="more">Show me as</option>
-                <option value="dva">Dva</option>
-                <option value="tri">Tri</option>
+                <option v-for="(as, index) in calendar.showAs" :key="as + '-' + index" :value="as">{{as}}</option>
               </select>
             </div>
           </div>
@@ -145,13 +134,37 @@
 
 <script>
 import GeneralInfo from './GeneralInfo'
+import {events} from '../../events'
 
 export default {
   name: 'MeetupForm',
-  components: {GeneralInfo}
+  data () {
+    return {
+      eventType: [],
+      moreActions: [],
+      notifications: {
+        type: [],
+        time: []
+      },
+      calendar: {
+        users: [],
+        showAs: []
+      }
+    }
+  },
+  components: {GeneralInfo},
+  methods: {
+    populateFields: function (response) {
+      this.eventType = response.eventType
+      this.moreActions = response.moreActions.values
+      this.notifications.type = response.notifications.type
+      this.notifications.time = response.notifications.time
+      this.calendar.users = response.calendar.users
+      this.calendar.showAs = response.calendar.showAs.values
+    }
+  },
+  mounted () {
+    events.$on('onResponse', this.populateFields)
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
