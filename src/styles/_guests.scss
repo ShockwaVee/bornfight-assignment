@@ -1,0 +1,119 @@
+.guests {
+  width: 41%;
+  box-sizing: border-box;
+  padding: 60px 80px 40px 60px;
+  box-shadow: 0 2px 6.8px 0.2px rgba(80, 103, 218, 0.15);
+  height: 100%;
+  z-index: 1;
+  .add-guests {
+    border-bottom: 1px solid $light-blue-grey-two;
+    padding-bottom: 100px;
+    h4 {
+      font-size: 16px;
+      line-height: 1.19;
+      letter-spacing: -0.3px;
+      margin: 0 0 20px;
+      color: $indigo-blue;
+    }
+    .input-container {
+      height: 45px;
+      box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
+      border: solid 1px $light-blue-grey;
+      margin-bottom: 20px;
+      padding-right: 3px;
+      input {
+        width: calc(77% - 30px);
+        @include desktop {
+          width: calc(77% - 15px);
+        }
+        @include mobile {
+          border: solid 1px $light-blue-grey;
+          box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
+          width: calc(77% - 5px);
+        }
+      }
+      button {
+        width: 23%;
+        color: $pale-grey;
+        background: $warm-pink;
+        box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
+        max-height: 38px;
+        min-width: 60px;
+        border: 1px solid $lipstick;
+      }
+    }
+    .checkbox-container {
+      height: auto;
+      .container {
+        font-size: 12px;
+        line-height: 1.58;
+        letter-spacing: -0.1px;
+        color: $blue-grey;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        &:hover input ~ .checkmark {
+          background-color: #e6e6e6;;
+        }
+        .checkmark {
+          width: 15px;
+          height: 15px;
+          object-fit: contain;
+          border-radius: 1px;
+          box-shadow: inset 0 1px 2px 0 rgba(0, 43, 165, 0.15);
+          border: solid 1px $light-blue-grey;
+          background-color: $white;
+          opacity: 1;
+        }
+        input {
+          &:checked ~ .checkmark {
+            background-color: $purple-two;
+          }
+        }
+      }
+    }
+    @include desktop {
+      padding-bottom: 40px;
+    }
+  }
+  .event-publish {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    button {
+      width: 147px;
+      height: 48px;
+      opacity: 0.93;
+      border-radius: 3.3px;
+      box-shadow: 0 12px 9px 0 rgba(0, 78, 194, 0.15);
+      border: solid 1px $indigo;
+      background-color: $indigo-blue;
+      font-size: 13px;
+      line-height: 1.46;
+      letter-spacing: -0.1px;
+      color: $pale-grey;
+      cursor: pointer;
+    }
+    .additional-info {
+      opacity: 0.7;
+      font-size: 11px;
+      line-height: 1.36;
+      letter-spacing: -0.1px;
+      color: $dusk;
+      margin-bottom: 29px;
+      margin-top: 0;
+      a {
+        font-size: 11px;
+        color: $warm-pink;
+        text-decoration: none;
+        margin-left: 5px;
+      }
+    }
+  }
+  @include desktop {
+    padding: 30px 20px 20px 30px;
+  }
+  @include tablet {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}

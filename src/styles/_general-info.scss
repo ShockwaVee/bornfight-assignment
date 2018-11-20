@@ -1,0 +1,99 @@
+.general-info {
+  width: 100%;
+  height: 200px;
+  background: $purple;
+  display: flex;
+  padding: 0 60px;
+  box-sizing: border-box;
+  box-shadow: 0 14px 10px 3px rgba(0, 78, 194, 0.15);
+  border: 1px solid $indigo;
+  .event-name {
+    width: 78%;
+    border-right: 1px solid $blurple;
+    padding: 60px 80px 11px 0;
+    display: flex;
+    flex-wrap: wrap;
+    @include desktop {
+      padding: 30px 20px 5px 0;
+    }
+    @include tablet {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid $blurple;
+      padding: 15px 0;
+    }
+  }
+  .event-time {
+    width: 22%;
+    padding: 55px 0 5px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 195px;
+    .starting-time, .ending-time {
+      width: calc(50% - 12.5px);
+      display: flex;
+      flex-direction: column;
+    }
+    .starting-time {
+      margin-right: 25px;
+    }
+    .date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 100%;
+      background: #774eb5;
+      font-size: 13px;
+      color: $pale-purple;
+      border-radius: 2px;
+      box-shadow: 0 3px 9px 0 rgba(11, 40, 64, 0.15);
+      @include desktop {
+        font-size: 11px;
+      }
+    }
+    .time {
+      display: flex;
+      box-sizing: border-box;
+      font-family: RobotoMedium, sans-serif;
+      justify-content: center;
+      align-items: center;
+      background: $white;
+      height: 45px;
+      width: 100%;
+      color: $dark-indigo;
+      border: 1px solid $indigo-blue-two;
+      border-radius: 2px;
+      box-shadow: 0 3px 9px 0 rgba(11, 40, 64, 0.15);
+      z-index: 1;
+      font-size: 15px;
+      @include desktop {
+        font-size: 12px;
+      }
+    }
+    a {
+      font-size: 12px;
+      color: $deep-lilac;
+      @include tablet {
+        padding-top: 10px;
+      }
+    }
+    @include desktop {
+      padding: 30px 0 5px 20px;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+  @include desktop {
+    padding: 0 30px;
+    height: 150px;
+  }
+  @include tablet {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0 15px;
+  }
+}
