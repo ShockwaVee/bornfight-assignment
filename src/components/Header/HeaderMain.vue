@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="actions">
-      <button>Save</button>
+      <button @click="submitForm">Save</button>
       <div @click="clearForm(false)"><i class="fas fa-times-circle"></i>Discard</div>
       <div @click="clearForm(true)"><i class="fas fa-trash"></i>Delete</div>
     </div>
@@ -24,6 +24,9 @@ export default {
         shouldClear = confirm('Are you sure you want to delete all of the data?')
       }
       if (shouldClear) events.$emit('clearForm')
+    },
+    submitForm () {
+      events.$emit('submitForm')
     }
   }
 }

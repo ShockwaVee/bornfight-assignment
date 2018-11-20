@@ -62,7 +62,8 @@ export default {
   },
   watch: {
     guests () {
-      events.$emit('valueChange', 'guests', this.guests.trim().split(','))
+      let guests = this.guests.split(',').map(e => e.trim())
+      events.$emit('valueChange', 'guests', guests)
     },
     action () {
       events.$emit('valueChange', 'action', this.action)

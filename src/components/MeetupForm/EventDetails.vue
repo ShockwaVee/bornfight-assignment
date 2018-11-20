@@ -19,7 +19,7 @@
               <option v-for="(type, index) in notifications.type" :key="type + '-' + index" :value="type" :selected="type === notification.type">{{type}}</option>
             </select>
           </div>
-          <input title="amount" type="text" v-model="notification.amount" required>
+          <input title="amount" type="number" v-model="notification.amount" required>
           <div class="select-wrapper">
             <select title="time" name="time" v-model="notification.time" required>
               <option v-for="(time, index) in notifications.time" :key="time + '-' + index" :value="time">{{time}}</option>
@@ -100,10 +100,10 @@ export default {
   },
   watch: {
     location () {
-      events.$emit('valueChange', 'location', this.location)
+      events.$emit('valueChange', 'location', this.location.trim())
     },
     description () {
-      events.$emit('valueChange', 'description', this.description)
+      events.$emit('valueChange', 'description', this.description.trim())
     },
     notification: {
       handler () {

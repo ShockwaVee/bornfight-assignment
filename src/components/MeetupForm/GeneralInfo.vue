@@ -47,7 +47,7 @@ export default {
   },
   watch: {
     name () {
-      events.$emit('valueChange', 'name', this.name)
+      events.$emit('valueChange', 'name', this.name.trim())
     },
     eventChecks () {
       events.$emit('valueChange', 'occurrence', this.eventChecks)
