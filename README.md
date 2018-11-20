@@ -2,6 +2,13 @@
 
 > Bornfight assignment done in Vue.js
 
+Some things I would improve in the current version of the code:
+* improve CSS organisation by using a CSS methodology
+* add timepickers for both date and time selectors
+* figure out the issue with 'Save event' and 'Add' buttons in Firefox
+* create my own font to reduce load time instead of using font awesome's font
+* improve form resetting and initial value setting
+
 ## Build Setup
 
 ``` bash
