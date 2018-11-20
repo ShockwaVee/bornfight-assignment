@@ -2,6 +2,8 @@
 
 > Bornfight assignment done in Vue.js
 
+The app can be viewed on https://bornfight-assignment.herokuapp.com/
+
 Some things I would improve in the current version of the code:
 * improve CSS organisation by using a CSS methodology
 * add timepickers for both date and time selectors
