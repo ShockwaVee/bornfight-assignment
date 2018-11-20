@@ -41,7 +41,7 @@ export default {
   },
   mounted () {
     axios
-      .get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
+      .get('https://deghq.com/yapp/front-labs/jfed112018/data.json')
       .then(response => {
         this.toggleModal()
         events.$emit('onResponse', response.data)
